@@ -7,4 +7,5 @@ class Car(Vehicle):
     def honk(self):
         return f"{self.brand} says Beep!"
     
-    
+car = Car("Toyota")
+print(car.honk())

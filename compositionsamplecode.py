@@ -1,21 +1,25 @@
-class Part:
+class Room:
     def __init__(self, name):
         self.name = name
 
+    def __del__(self):
+        print(f"{self.name} removed.")
 
-class Engine:
+
+class House:
     def __init__(self):
-        # The Engine creates and owns these Part objects directly
-        self.parts = [
-            Part("Piston"),
-            Part("Crankshaft"),
-        ]
+        self.rooms = [Room("Living Room"), Room("Kitchen")]
 
-    def list_parts(self):
-        for part in self.parts:
-            print(part.name)
+    def show_rooms(self):
+        for room in self.rooms:
+            print(room.name)
+
+    def __del__(self):
+        del self.rooms
+        print("House demolished with its rooms.")
 
 
-engine = Engine()
-engine.list_parts()
+house = House()
+house.show_rooms()
 
+del house

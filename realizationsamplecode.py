@@ -10,3 +10,5 @@ class EmailNotification(NotificationChannel):
         print(f"Sending email notification: {message}")
         return True
     
+message = EmailNotification()
+message.send("Hi from Mel")
