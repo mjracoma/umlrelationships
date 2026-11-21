@@ -14,8 +14,6 @@ logger = Logger()
 service = Service("order_101")
 service.process(logger)
 
-# Notice: The Service does not own the Logger.
-# Even if the Service object is deleted, the Logger still exists.
 
 del service
 
